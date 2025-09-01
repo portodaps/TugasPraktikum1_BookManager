@@ -20,7 +20,7 @@ public class BookManagerTest {
     @Test
     @DisplayName("Test menambahkan buku")
     void testAddBook() {
-        Book book = new Book("Pemrograman", "Andi", 2026);
+        Book book = new Book("Matematika Dasar", "Supri", 2026);
         bookManager.addBook(book);
 
         assertEquals(1, bookManager.getBookCount());
@@ -29,7 +29,7 @@ public class BookManagerTest {
     @Test
     @DisplayName("Test menghapus buku yang ada")
     void testRemoveExistingBook() {
-        Book book = new Book("Basis Data", "Erlangga", 2021);
+        Book book = new Book("Basis Data", "David Setiawan", 2021);
         bookManager.addBook(book);
 
         boolean removed = bookManager.removeBook("Basis Data");
@@ -41,7 +41,7 @@ public class BookManagerTest {
     @Test
     @DisplayName("Test menghapus buku yang tidak ada")
     void testRemoveNonExistingBook() {
-        boolean removed = bookManager.removeBook("Buku Ga Ada");
+        boolean removed = bookManager.removeBook("Koding Berhadiah");
 
         assertFalse(removed);
         assertEquals(0, bookManager.getBookCount());
